@@ -9,10 +9,18 @@ import "bootstrap"
 import '../styles/index.css'
 
 // components
-import Home from './components/Home';
+import SecondCounter from './components/Home';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+let counter=0;
+function count () {
+  counter++;
+  let string = counter.toString().padStart(6, "0");
+  console.log (string);
+
+ ReactDOM.createRoot(document.getElementById('root')).render(
+    <SecondCounter
+    string = {string} />
+
+);
+};
+setInterval (count ,1000);
